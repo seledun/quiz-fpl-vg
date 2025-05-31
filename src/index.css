@@ -4,9 +4,14 @@ body {
 
 #play-area, #history-area {
   margin: auto;
+  margin-top: 1em;
   height: 20vh;
   min-width: 200px;
   width: 80%;
+}
+
+#play-area, #history-area h2, h3 {
+  text-align: center;
 }
 
 #play-area-question {
@@ -21,13 +26,13 @@ body {
   text-align: center;
 }
 
+#btn-play-again {
+  width: 100%;
+}
+
 /* Override bootstrap behavior */
 .row > * {
   padding-left: 0px !important;
   padding-right: 0px !important;
   padding: 5px;
-}
-
-button {
-
 }
