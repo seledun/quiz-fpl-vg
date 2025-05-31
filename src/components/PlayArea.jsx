@@ -4,6 +4,7 @@ import { ProgressBar } from "react-bootstrap";
 import { useState } from "react";
 import { useRef } from "react";
 import axios from "axios";
+import HistoryChart from "./HistoryChart";
 
 export function PlayArea({ isPlayMode }) {
     const [index, setIndex] = useState(-1);
@@ -179,8 +180,8 @@ export function PlayArea({ isPlayMode }) {
             )
         ) : (
             <div id="history-area">
-                <h2>Past runs</h2>
-                
+                <h2>Previous runs</h2>
+                <HistoryChart />
             </div>
         ));
 }
