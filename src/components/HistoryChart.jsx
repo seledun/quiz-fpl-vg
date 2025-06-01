@@ -15,12 +15,14 @@ const HistoryChart = () => {
     }, [data]);
 
     const chartData = (data)
-        .slice(-10)
         .map((value, i) => ({
             name: `Run #${i + 1}`,
             value: value,
         }));
 
+    /** 
+     * Don't plot any data if we have no previous scores.
+    */
     if (data.length === 0) {
         return <span>No history..</span>;
     }
