@@ -70,3 +70,27 @@ nav {
     min-width: 100%;
   }
 }
+.progress-bar {
+  transition: width .2s ease-in-out !important;
+}
+
+.answer-button {
+  max-width: 49%;
+  min-width: 49%;
+  min-height: 3.5em;
+  overflow: hidden;
+}
+
+.answer-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Wrap buttons to one col for smaller screen sizes */
+@media only screen and (max-width: 600px) {
+  .answer-button {
+    min-width: 100%;
+  }
+}
