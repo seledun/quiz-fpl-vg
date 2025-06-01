@@ -1,12 +1,16 @@
-# React + Vite
+# QuizApp
+This is a simple quiz app that uses the [Trivia API](https://opentdb.com/api_config.php) for the questions,
+it stores the score of the previous ten runs in localstorage and uses Recharts to plot these runs. The application is built using
+[React + Vite](https://vite.dev), [Axios](https://axios-http.com/docs/intro) and [Recharts](https://recharts.org/en-US)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Installation
+Make sure Nodejs and NPM is installed on the system beforehand,
+1. Clone this repo
+2. Navigate to the root of the cloned repo
+3. Run the command: `npm install` in the terminal to install the dependencies.
+4. Run the command: `npm run build` to build the application.
+5. Now run: `npm run preview` to run the built application locally.
+6. Open the URL that's presented in the terminal window. 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Licence
+The source code is published with the [MIT Licence](https://github.com/seledun/quiz-fpl-vg?tab=MIT-1-ov-file#readme)
