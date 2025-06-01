@@ -30,9 +30,35 @@ body {
   width: 100%;
 }
 
+.recharts-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Override bootstrap behavior */
 .row > * {
   padding-left: 0px !important;
   padding-right: 0px !important;
   padding: 5px;
+}
+
+.answer-button {
+  max-width: 49%;
+  min-width: 49%;
+  min-height: 3.5em;
+  overflow: hidden;
+}
+
+.answer-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Wrap buttons to one col for smaller screen sizes */
+@media only screen and (max-width: 600px) {
+  .answer-button {
+    min-width: 100%;
+  }
 }
