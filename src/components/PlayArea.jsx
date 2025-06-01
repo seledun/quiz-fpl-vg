@@ -10,6 +10,7 @@ export function PlayArea({ isPlayMode }) {
     const [index, setIndex] = useState(-1);
     const [timer, setTimer] = useState(100);
     const [quiz, setQuiz] = useState(null);
+    const [loadingMsg, setLoadingMsg] = useState("Loading");
     const [quizAnswers, setQuizAnswers] = useState([]);
     const [availableAnswers, setAvailableAnswers] = useState([]);
     const [finished, setFinished] = useState(false);
@@ -81,17 +82,26 @@ export function PlayArea({ isPlayMode }) {
         nextQuestion();
     }
 
-    const fetchQuiz = () => {
+    const fetchQuiz = async () => {
         setLoading(true);
-        axios.get('https://opentdb.com/api.php?amount=10')
-            .then(response => {
-                setQuiz(response.data.results);
+        let tryCount = 1;
+        while (tryCount < 3) {
+            try {
+                const resp = await axios.get('https://opentdb.com/api.php?amount=10')
+                setQuiz(resp.data.results);
                 setQuizAnswers(new Array(response.data.results.length));
-            })
-            .catch(error => {
+                setLoadingMsg("Loading");
+                break;
+            }
+            catch (error) {
                 console.error("Error fetching trivia questions", error.message);
-            });
-        setLoading(false);
+                await new Promise(resolve => setTimeout(resolve, 2000)); // wait 2s on fail
+                tryCount++;
+            }
+        }
+        if (tryCount === 3) {
+            setLoadingMsg("Failed to fetch quiz, please try again later");
+        }
     }
 
     const restartGame = () => {
@@ -135,13 +145,18 @@ export function PlayArea({ isPlayMode }) {
 
         setAvailableAnswers(questions);
         startTimer();
+        setLoading(false);
 
     }, [index, quiz]);
 
     return (
         isPlayMode ? (
             loading ? (
-                <Spinner />
+                <div id="play-area">
+                    <h1>{loadingMsg}</h1>
+                    <br/>
+                    <Spinner />
+                </div>
             ) : (
                 !finished ? (
                     <div id="play-area">
