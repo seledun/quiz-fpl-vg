@@ -153,13 +153,13 @@ export function PlayArea({ isPlayMode }) {
                                     : "..."
                             }}
                         ></span>
-                        <div id="play-area-buttons" className="row gy-0">
-                            <div className="col-12 col-lg-6">
+                        <div id="play-area-buttons">
+                            <div className="answer-buttons">
                                 {availableAnswers.map((ans, idx) => (
                                     <Button
                                         key={idx}
                                         variant="primary"
-                                        className="answer-button w-100 mb-2"
+                                        className="mb-2 answer-button"
                                         dangerouslySetInnerHTML={{ __html: ans }}
                                         onClick={() => verifyAnswer(index, ans)}
                                     ></Button>
