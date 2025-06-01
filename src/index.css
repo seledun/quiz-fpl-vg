@@ -2,12 +2,20 @@ body {
   background-color: black;
 }
 
-#play-area, #history-area {
+#play-area {
   margin: auto;
   margin-top: 1em;
   height: 20vh;
   min-width: 200px;
   width: 80%;
+}
+
+#history-area, #play-area {
+  min-width: 500px;
+}
+
+nav {
+  min-width: 500px;
 }
 
 #play-area, #history-area h2, h3 {
