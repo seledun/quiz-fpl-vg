@@ -1,7 +1,8 @@
 # QuizApp
 This is a simple quiz app that uses the [Trivia API](https://opentdb.com/api_config.php) for the questions,
 it stores the score of the previous ten runs in localstorage and uses Recharts to plot these runs. The application is built using
-[React + Vite](https://vite.dev), [Axios](https://axios-http.com/docs/intro) and [Recharts](https://recharts.org/en-US)
+[React + Vite](https://vite.dev), [Axios](https://axios-http.com/docs/intro) and [Recharts](https://recharts.org/en-US). 
+The styling used is from [react-bootstrap](https://react-bootstrap.netlify.app).
 
 # Installation
 Make sure Nodejs and NPM is installed on the system beforehand,
